@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login and Registration Form with Validation</title>
+    <link rel="stylesheet" href="login_signin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // JavaScript for email validation
+        function validateEmail(input) {
+            const email = input.value;
+            const regex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+            const message = document.getElementById("emailError");
+            if (!regex.test(email)) {
+                message.textContent = "Email must end with '@gmail.com'.";
+                input.setCustomValidity("Invalid email format");
+            } else {
+                message.textContent = "";
+                input.setCustomValidity("");
+            }
+        }
+
+        // JavaScript for username validation
+        function validateUsername(input) {
+            const username = input.value;
+            const regex = /^[a-z0-9]+$/;
+            const message = document.getElementById("usernameError");
+            if (!regex.test(username)) {
+                message.textContent = "Username can only contain lowercase letters and numbers.";
+                input.setCustomValidity("Invalid username format");
+            } else {
+                message.textContent = "";
+                input.setCustomValidity("");
+            }
+        }
+
+        // JavaScript for password validation
+        function validatePassword(input) {
+            const password = input.value;
+            const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+            const message = document.getElementById("passwordError");
+            if (!regex.test(password)) {
+                message.textContent = "Password must include at least 8 characters, an uppercase letter, a lowercase letter, a number, and a special character.";
+                input.setCustomValidity("Invalid password format");
+            } else {
+                message.textContent = "";
+                input.setCustomValidity("");
+            }
+        }
+    </script>
+    <script> document.getElementById('loginForm').addEventListener('submit', async (e) => { e.preventDefault(); const username = document.getElementById('username').value; const password = document.getElementById('password').value; const response = await fetch('/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) }); if (response.ok) { alert('Login successful'); } else { alert('Invalid username or password'); } }); </script>
+</head>
+
+<body>
+    <form action=C:\Users\HP\Desktop\capstone\SmartCampus\index.html method="post">
+        <div class="container">
+            <input type="checkbox" id="flip">
+            <div class="cover">
+                <div class="front">
+                    <img src="images/frontImg.jpg" alt="">
+                    <div class="text">
+                        <span class="text-1">Every new friend is a <br> new adventure</span>
+                        <span class="text-2">Let's get connected</span>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="text">
+                        <span class="text-1">Complete miles of journey <br> with one step</span>
+                        <span class="text-2">Let's get started</span>
+                    </div>
+                </div>
+            </div>
+            <div class="forms">
+                <div class="form-content">
+                    <div class="login-form">
+                        <div class="title">GLS University</div>
+                        <form action="#">
+                            <br>
+                            <img src="C:\Users\amanmbhatt1901\Downloads\Food-Ordering-System-WebDevelopment-main\Food-Ordering-System-WebDevelopment-main\images\glslogo.png"
+                                alt="GLS Logo" style="width: 100%; height: auto;" />
+                            <br>
+                            <div class="input-boxes">
+                                <div class="text sign-up-text">Login to our Smart Canteen? <br><label
+                                        for="flip">Click-Me Now</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-form">
+                        <div class="title">Login</div>
+                        <form action=C:\Users\HP\Desktop\capstone\SmartCampus\index.html>
+                            <div class="input-boxes">
+                                <div class="input-box">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Name" required>
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" placeholder="Username" oninput="validateUsername(this)" required>
+                                    <small id="usernameError" style="color: #185997; display: block;"></small>
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="text" placeholder="Email" oninput="validateEmail(this)" required>
+                                    <small id="emailError" style="color: #185997; display: block;"></small>
+                                </div>
+                                <div class="input-box">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" placeholder="Password" oninput="validatePassword(this)"
+                                        required>
+                                    <small id="passwordError" style="color: #185997; display: block;"></small>
+                                </div>
+                                <div class="button input-box">
+                                    <input type="submit" value="Submit">
+                                </div>
+                                <div class="text sign-up-text">
+                                    <br> <label for="flip">LOGO</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,1286 @@
+
+@media screen and (max-width: 544px) {
+
+html,
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+.navi .navbar li a{
+    padding: 20%;
+}
+.navi .navbar li a:hover{
+    border: 1px solid;
+    border-color:#185997;
+    border-radius: 30%;
+}
+.box h3{
+    font-size: 10px !important; 
+    padding: 2px !important;
+}
+#clock{
+font-size: small !important;
+}
+.box {
+border: 1px solid #b2b2b2;
+padding: 0px !important;
+margin: 10px;
+border-radius: 8px;
+font-size:8px !important;
+transition: .3s ease;
+display: block;
+justify-items: center;
+
+}
+.container4{
+    display: block !important;
+    justify-items: center;
+}
+.container4 .phone{
+    width: 70%;
+    margin-left: 20%;
+}
+.container3 .question{
+    margin-left: 10% !important;
+}
+.container3{
+    display: block !important;
+    justify-items: center;
+}
+.container1 .people .sec{
+    margin-left: 10% ;
+}
+.container1 .people{
+    margin: 0%;
+    width: 70%;
+}
+.container1 .hand{
+    padding: 5% !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10% !important;
+}
+.container{
+    display: block !important;
+    padding: 5%;
+    padding-top: 20px;
+    margin-bottom: 10px !important; 
+}
+.container div{
+    margin: 20px;
+}
+.menupic .para .primary{
+    margin: 20%;
+    margin-top: 40px !important;
+    margin-bottom: 30px;
+}
+.menupic .para .tertiary{
+    padding-left: 40px !important;
+    padding-right: 0px !important;
+}
+.container1{
+    display: block !important;
+    margin: 10px !important;
+    justify-items: center;
+}
+.menupic{
+    display: block !important;
+    justify-items: center;
+    width: 100%;
+}
+.menupic .para .bob{
+    padding: 20px;
+    margin-top: 30px;
+   
+}
+.menupic .para{
+    display: block !important;
+    justify-items: center;
+    padding-top: 0px !important;
+}
+.menupic .imagee img{
+    padding-right: 15%;
+    padding: 10%;
+    margin-left: 3% !important;
+    width: 100% !important;
+}
+#navbarNav{
+    background-color: #fff5f2;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #4b4948;
+}
+.burger{
+    display: block !important;
+    justify-items: center;
+}
+.burger .parra .secondary{
+    width: 100% !important; 
+    margin-left: 45%;
+}
+.burger .parra{
+    display: block !important;
+    justify-items: center !important;
+    margin: 10px;
+    width: 80%;
+}
+.burger .parra p{
+    padding: 10px;
+    padding-left: 40px;
+}
+.burger .imageburger img{
+    width: 90% !important;
+    margin: 10% !important;
+}
+.burger .imageburger{
+    width: 100%;
+
+}
+.items ul li{
+    margin: 10px !important;
+}
+}
+
+
+@media screen and (max-width: 340px) {
+
+    html,
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .navi .navbar li a{
+        padding: 10%;
+    }
+    .navi .navbar li a:hover{
+        border: 1px solid;
+        border-color:#185997;
+        border-radius: 20%;
+    }
+    .box h3{
+            font-size: 10px !important; 
+            padding: 2px !important;
+        }
+    #clock{
+        font-size: small !important;
+    }
+    .box {
+        border: 1px solid #b2b2b2;
+        padding: 0px !important;
+        margin: 10px;
+        border-radius: 8px;
+        font-size:8px !important;
+        transition: .3s ease;
+        display: block;
+        justify-items: center;
+        
+        }
+    .container4{
+        display: block !important;
+        justify-items: center;
+    }
+    .container4 .phone{
+        width: 70%;
+        margin-left: 20%;
+    }
+    .container3 .question{
+        margin-left: 10% !important;
+    }
+    .container3{
+        display: block !important;
+        justify-items: center;
+    }
+    .container1 .people .sec{
+        margin-left: 10% ;
+    }
+    .container1 .people{
+        margin: 0%;
+        width: 70%;
+    }
+    .container1 .hand{
+        padding: 5% !important;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10% !important;
+    }
+    .container{
+        display: block !important;
+        padding: 5%;
+        padding-top: 20px;
+        margin-bottom: 10px !important; 
+    }
+    .container div{
+        margin: 20px;
+    }
+    .menupic .para .primary{
+        margin: 20%;
+        margin-top: 40px !important;
+        margin-bottom: 30px;
+    }
+    .menupic .para .tertiary{
+        padding-left: 20px !important;
+        padding-right: 0px !important;
+    }
+    .container1{
+        display: block !important;
+        margin: 10px !important;
+        justify-items: center;
+    }
+    .menupic{
+        display: block !important;
+        justify-items: center;
+        width: 100%;
+    }
+    .menupic .para .bob{
+        padding: 20px;
+        margin-top: 30px;
+       
+    }
+    .menupic .para{
+        display: block !important;
+        justify-items: center;
+        padding-top: 0px !important;
+    }
+    .menupic .imagee img{
+        padding-right: 15%;
+        padding: 10%;
+        margin-left: 3% !important;
+        width: 100% !important;
+    }
+    #navbarNav{
+        background-color: #fff5f2;
+        border: 1px solid;
+        border-radius: 30px;
+        border-color: #272d36;
+    }
+    .burger{
+        display: block !important;
+        justify-items: center;
+    }
+    .burger .parra .secondary{
+        width: 100% !important; 
+        margin-left: 45%;
+    }
+    .burger .parra{
+        display: block !important;
+        justify-items: center !important;
+        margin: 10px;
+        width: 80%;
+    }
+    .burger .parra p{
+        padding: 10px;
+        padding-left: 40px;
+    }
+    .burger .imageburger img{
+        width: 90% !important;
+        margin: 10% !important;
+    }
+    .burger .imageburger{
+        width: 100%;
+    
+    }
+    .items ul li{
+        margin: 10px !important;
+    }
+    }
+
+@media screen and (max-width: 492px) {
+
+    html,
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .navi .navbar li a{
+        padding: 10%;
+    }
+    .navi .navbar li a:hover{
+        border: 1px solid;
+        border-color:#185997;
+        border-radius: 20%;
+    }
+    .box h3{
+        font-size: 10px !important; 
+        padding: 2px !important;
+    }
+#clock{
+    font-size: small !important;
+}
+.box {
+    border: 1px solid #b2b2b2;
+    padding: 0px !important;
+    margin: 10px;
+    border-radius: 8px;
+    font-size:8px !important;
+    transition: .3s ease;
+    display: block;
+    justify-items: center;
+    
+    }
+    .container4{
+        display: block !important;
+        justify-items: center;
+    }
+    .container4 .phone{
+        width: 70%;
+        margin-left: 20%;
+    }
+    .container3 .question{
+        margin-left: 10% !important;
+    }
+    .container3{
+        display: block !important;
+        justify-items: center;
+    }
+    .container1 .people .sec{
+        margin-left: 10% ;
+    }
+    .container1 .people{
+        margin: 0%;
+        width: 70%;
+    }
+    .container1 .hand{
+        padding: 5% !important;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10% !important;
+    }
+    .container{
+        display: block !important;
+        padding: 5%;
+        padding-top: 20px;
+        margin-bottom: 10px !important; 
+    }
+    .container div{
+        margin: 20px;
+    }
+    .menupic .para .primary{
+        margin: 20%;
+        margin-top: 40px !important;
+        margin-bottom: 30px;
+    }
+    .menupic .para .tertiary{
+        padding-left: 40px !important;
+        padding-right: 0px !important;
+    }
+    .container1{
+        display: block !important;
+        margin: 10px !important;
+        justify-items: center;
+    }
+    .menupic{
+        display: block !important;
+        justify-items: center;
+        width: 100%;
+    }
+    .menupic .para .bob{
+        padding: 20px;
+        margin-top: 30px;
+       
+    }
+    .menupic .para{
+        display: block !important;
+        justify-items: center;
+        padding-top: 0px !important;
+    }
+    .menupic .imagee img{
+        padding-right: 15%;
+        padding: 10%;
+        margin-left: 3% !important;
+        width: 100% !important;
+    }
+    #navbarNav{
+        background-color: #fff5f2;
+        border: 1px solid;
+        border-radius: 30px;
+        border-color: #272d36;
+    }
+    .burger{
+        display: block !important;
+        justify-items: center;
+    }
+    .burger .parra .secondary{
+        width: 100% !important; 
+        margin-left: 45%;
+    }
+    .burger .parra{
+        display: block !important;
+        justify-items: center !important;
+        margin: 10px;
+        width: 80%;
+    }
+    .burger .parra p{
+        padding: 10px;
+        padding-left: 40px;
+    }
+    .burger .imageburger img{
+        width: 90% !important;
+        margin: 10% !important;
+    }
+    .burger .imageburger{
+        width: 100%;
+    
+    }
+    .items ul li{
+        margin: 10px !important;
+    }
+    }
+
+@media screen and (max-width: 430px) {
+
+html,
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+.navi .navbar li a{
+    padding: 10%;
+}
+.navi .navbar li a:hover{
+    border: 1px solid;
+    border-color:#185997;
+    border-radius: 20%;
+}
+.box h3{
+    font-size: 10px !important; 
+    padding: 2px !important;
+}
+#clock{
+font-size: small !important;
+}
+.box {
+border: 1px solid #b2b2b2;
+padding: 0px !important;
+margin: 10px;
+border-radius: 8px;
+font-size:8px !important;
+transition: .3s ease;
+display: block;
+justify-items: center;
+
+}
+.container4{
+    display: block !important;
+    justify-items: center;
+}
+.container4 .phone{
+    width: 70%;
+    margin-left: 20%;
+}
+.container3 .question{
+    margin-left: 10% !important;
+}
+.container3{
+    display: block !important;
+    justify-items: center;
+}
+.container1 .people .sec{
+    margin-left: 10% ;
+}
+.container1 .people{
+    margin: 0%;
+    width: 70%;
+}
+.container1 .hand{
+    padding: 5% !important;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10% !important;
+}
+.container{
+    display: block !important;
+    padding: 5%;
+    padding-top: 20px;
+    margin-bottom: 10px !important; 
+}
+.container div{
+    margin: 20px;
+}
+.menupic .para .primary{
+    margin: 20%;
+    margin-top: 40px !important;
+    margin-bottom: 30px;
+}
+.menupic .para .tertiary{
+    padding-left: 20px !important;
+    padding-right: 0px !important;
+}
+.container1{
+    display: block !important;
+    margin: 10px !important;
+    justify-items: center;
+}
+.menupic{
+    display: block !important;
+    justify-items: center;
+    width: 100%;
+}
+.menupic .para .bob{
+    padding: 20px;
+    margin-top: 30px;
+   
+}
+.menupic .para{
+    display: block !important;
+    justify-items: center;
+    padding-top: 0px !important;
+}
+.menupic .imagee img{
+    padding-right: 15%;
+    padding: 10%;
+    margin-left: 3% !important;
+    width: 100% !important;
+}
+#navbarNav{
+    background-color: #fff5f2;
+    border: 1px solid;
+    border-radius: 30px;
+    border-color: #272d36;
+}
+.burger{
+    display: block !important;
+    justify-items: center;
+}
+.burger .parra .secondary{
+    width: 100% !important; 
+    margin-left: 45%;
+}
+.burger .parra{
+    display: block !important;
+    justify-items: center !important;
+    margin: 10px;
+    width: 80%;
+}
+.burger .parra p{
+    padding: 10px;
+    padding-left: 40px;
+}
+.burger .imageburger img{
+    width: 90% !important;
+    margin: 10% !important;
+}
+.burger .imageburger{
+    width: 100%;
+
+}
+.items ul li{
+    margin: 10px !important;
+}
+}
+
+
+    /* media query for 475px */
+
+    @media screen and (max-width: 407px) {
+
+    html,
+    body{
+        width: 100%;
+        overflow-x: hidden;
+    }
+    .box h3{
+        font-size: 20px;
+    }
+    .box {
+    border: 1px solid #b2b2b2;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size:10px !important;
+    transition: .3s ease;
+    display: block;
+    justify-items: center;
+    cursor: pointer;
+}
+    .menus{
+        width: 100%;
+        display: flex !important;
+        overflow-wrap:anywhere ;
+
+    }
+    .navi .navbar li a{
+        padding: 10%;
+    }
+    .navi .navbar li a:hover{
+        border: 1px solid;
+        border-color:#185997;
+        border-radius: 20%;
+    }
+
+    .container4{
+        display: block !important;
+        justify-items: center;
+    }
+    .container4 .phone{
+        width: 70%;
+        margin-left: 20%;
+    }
+    .container3 .question{
+        margin-left: 10% !important;
+    }
+    .container3{
+        display: block !important;
+        justify-items: center;
+    }
+    .container1 .people .sec{
+        margin-left: 10% ;
+    }
+    .container1 .people{
+        margin: 0%;
+        width: 70%;
+    }
+    .container1 .hand{
+        padding: 5% !important;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10% !important;
+    }
+    .container{
+        display: block !important;
+        padding: 5%;
+        padding-top: 20px;
+        margin-bottom: 10px !important; 
+    }
+    .container div{
+        margin: 20px;
+    }
+    .menupic .para .primary{
+        margin: 20%;
+        margin-top: 40px !important;
+        margin-bottom: 30px;
+    }
+    .menupic .para .tertiary{
+        padding-left: 15px !important;
+        padding-right: 0px !important;
+    }
+    .container1{
+        display: block !important;
+        margin: 10px !important;
+        justify-items: center;
+    }
+    .menupic{
+        display: block !important;
+        justify-items: center;
+        width: 100%;
+    }
+    .menupic .para .bob{
+        padding: 20px;
+        margin-top: 30px;
+       
+    }
+    .menupic .para{
+        display: block !important;
+        justify-items: center;
+        padding-top: 0px !important;
+    }
+    .menupic .imagee img{
+        padding-right: 15%;
+        padding: 10%;
+        margin-left: 3% !important;
+        width: 100% !important;
+    }
+    #navbarNav{
+        background-color: #fff5f2;
+        border: 1px solid;
+        border-radius: 30px;
+        border-color: #272d36;
+    }
+    .burger{
+        display: block !important;
+        justify-items: center;
+    }
+    .burger .parra .secondary{
+        width: 100% !important; 
+        margin-left: 45%;
+    }
+    .burger .parra{
+        display: block !important;
+        justify-items: center !important;
+        margin: 10px;
+        width: 80%;
+    }
+    .burger .parra p{
+        padding: 10px;
+        padding-left: 40px;
+    }
+    .burger .imageburger img{
+        width: 90% !important;
+        margin: 10% !important;
+    }
+    .burger .imageburger{
+        width: 100%;
+    
+    }
+    .items ul li{
+        margin: 10px !important;
+    }
+}
+
+
+    /* media query for 640px */
+
+   @media screen and (max-width: 640px) {
+    .container4{
+        display: block !important;
+        justify-items: center;
+    }
+    .container4 .phone{
+        width: 70%;
+        margin-left: 20%;
+    }
+    .container3 .question{
+        margin-left: 20%;
+    }
+    .container3{
+        display: block !important;
+        justify-items: center;
+    }
+    .container1 .people{
+        margin: 0%;
+        width: 70%;
+    }
+    .container1 .hand{
+        padding: 10%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .container{
+        display: block !important;
+        padding: 5%;
+        padding-top: 20px;
+    }
+    .container div{
+        margin: 20px;
+    }
+    .container1{
+        display: block !important;
+        margin: 10px !important;
+        justify-items: center;
+    }
+    .menupic{
+        display: block !important;
+        justify-items: center;
+    }
+    .menupic .para .bob{
+        padding: 20px;
+        margin-top: 30px;
+    }
+    .menupic .para{
+        display: block;
+        justify-items: center;
+        padding-top: 50px;
+    }
+    .menupic .imagee img{
+        padding-right: 15%;
+        padding: 10%;
+    }
+    #navbarNav{
+        background-color: #fff5f2;
+        border: 1px solid;
+        border-radius: 30px;
+        border-color: #272d36;
+    }
+    .burger{
+        display: block !important;
+        justify-items: center;
+    }
+    .burger .parra{
+        display: block;
+        justify-items: center;
+        margin: 10px;
+        width: 80%;
+    }
+    .burger .parra p{
+        padding: 10px;
+        padding-left: 40px;
+    }
+    .burger .imageburger img{
+        width: 80%;
+    }
+    .burger .imageburger{
+        width: 80%;
+    
+    }
+    .items ul li{
+        margin: 10px !important;
+    }
+}
+
+/* Responsive for 768px */
+
+@media screen and (max-width: 768px) {
+
+    .navi .navbar li a{
+        padding: 10%;
+    }
+    .navi .navbar li a:hover{
+        border: 1px solid;
+        border-color:#185997;
+        border-radius: 20%;
+    }
+
+    .container4{
+        display: block !important;
+        justify-items: center;
+    }
+    .container4 .phone{
+        width: 60%;
+        margin-left: 20%;
+    }
+    .container3 .question{
+        margin-left: 20%;
+        width: 90%;
+    }
+    .container3{
+        display: block !important;
+        justify-items: center;
+    }
+    .container1 .people{
+        margin: 0%;
+        width: 70%;
+    }
+    .container1 .hand{
+        padding: 17%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+        grid-gap: 10px;
+        justify-content: center;
+    }
+    .container .itemss{
+        padding: 10px;
+    }
+    .container .itemss .price{
+        margin: 2px;
+    }
+    .container div{
+        margin: 20px;
+    }
+    .container1{
+        display: block !important;
+        margin: 10px !important;
+        justify-items: center;
+    }
+    .menupic{
+        display: block !important;
+        justify-items: center;
+    }
+    .menupic .para .bob{
+        padding: 20px;
+        margin-top: 30px;
+    }
+    .menupic .para .primary{
+        font-size:50px;
+    }
+    .menupic .para .tertiary{
+        font-size: 20px;
+        padding-left: 60px;
+        padding-right: 30px;
+    }
+    .menupic .para{
+        display: block;
+        justify-items: center;
+        padding-top: 50px;
+        width: 80%;
+    }
+    .menupic .imagee img{
+        padding: 13%;
+        padding-bottom: 40px;
+    }
+    #navbarNav{
+        background-color: #fff5f2;
+        border: 1px solid;
+        border-radius: 30px;
+        border-color: #272d36;
+    }
+    .burger{
+        display: block !important;
+        justify-items: center;
+    }
+    .burger .parra{
+        display: block;
+        justify-items: center;
+        margin: 10px;
+        width: 80%;
+    }
+    .burger .parra p{
+        padding: 10px;
+        padding-left: 40px;
+    }
+    .burger .imageburger img{
+        width: 70%;
+        margin-left: 22%;
+    }
+    .burger .imageburger{
+        width: 80%;
+    
+    }
+    .items ul li{
+        margin: 10px !important;
+    }
+}
+
+
+
+    @keyframes appear{
+        from{
+            opacity: 0.3;
+            transform: translateX(100%);
+            filter: blur(5px);
+            transition: all 1s;
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+            filter: blur(0);
+        }
+    }
+    @keyframes phonee{
+        from{
+            opacity: 0;
+            transform: translateX(-100%);
+            filter: blur(5px);
+            transition: all 1s;
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0px);
+            filter: blur(0);
+        }
+    }
+    .phone{
+        animation: phonee linear;
+        animation-timeline: view();
+        animation-range-start:cover;
+        animation-range-end:400px;
+    } 
+    .imageburger{
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range-start:cover;
+        animation-range-end:400px;
+    } 
+    .phone img:hover{
+        margin-left: 30px;
+    }
+    .bt1:hover{
+        transform: translateY(-10px);
+        box-shadow: 1px 5px 15px rgba(0,0,0,0.4);
+    }
+    .bt2:hover{
+        transform: translateY(-10px);
+        box-shadow: 1px 5px 15px rgba(0,0,0,0.4);
+    }
+    .neww li a{
+        text-decoration: none;
+        color: gray;
+    }
+    .seconddd{
+        display: flex;
+    }
+    .neww li{
+        list-style: none;
+        color: gray;
+    }
+    .final h2{
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+    .aboutt{
+        width: 40%;
+    }
+    .final{
+        width: 100%;
+        background-color: #272d36;
+        padding: 5%;
+        display: flex;
+    }
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: 40p;
+        padding-top: 10px;
+    }
+    .bt1{
+        width:50% ;
+        background-color: black;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 1px solid;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-right: 20px;
+        transition: .3s ease;
+    }
+    .bt2{
+        width:50% ;
+        background-color: black;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 1px solid;
+        border-radius: 20px;
+        cursor: pointer;
+        margin-left: 20px;
+        transition: .3s ease;
+    }
+    .phone{
+        margin: 30px;
+        margin-top: 80px;
+        width: 45%;
+    }
+    .container4{
+        display: flex;
+    }
+    .container3{
+        display: block;
+        justify-items: center;
+        transition: .5s ease;
+    }
+    .question{
+        font-size: 44px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .bodybuilder{
+        border-radius: 50%;
+        margin: 0px;
+        margin-top: px;
+    }
+    .container1{
+        display: flex;
+        margin: 50px;
+        margin-top: 100px;
+        align-items: center;
+    }
+    .people{
+        width: 60%;
+        margin: 40px;
+    }
+    .hand{
+        margin: 10px;
+        margin-bottom: 30px;
+    }
+    .sec{
+        font-size: 44px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .itemss{
+        padding: 25px;
+        display: block;
+        transition: .3s ease;
+    }
+    .itemss .imgeeee img{
+        transition: .3s ease;
+    }
+
+    .itemss:hover{
+        box-shadow: 0px 5px 15px rgba(0,0,0, .4);
+    }
+    .itemss:hover .imgeeee img{
+        transform: scale(.95);
+    }
+    .container{
+        width: 100%;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+        margin-bottom: 30px;
+    }
+    .items{
+        font-size: 20px;
+        font-weight: 500;
+        width: 100%;
+        justify-items: center;
+        margin-top: 30px;
+    }
+    .items ul li{
+        display: inline-block;
+        list-style: none;
+        margin: 20px;
+    }
+    .items a{
+        text-decoration: none;
+        font-size: 20px;
+        color: black;
+
+    }
+    .menuuuu{
+        padding-top:10px;
+    }
+    .parra .butt{
+        margin-top: 10px;
+    }
+    .imageburger{
+        width: 52%;
+    }
+    .four{
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+    }
+    .ternary{
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .secondary {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    }
+    .parra{
+        margin: 20px;
+        margin-top: 140px;
+        width: 48%;
+    }
+    .imageburger img{
+        margin: 40px;
+        width: 70%;
+    }
+    .burger{
+        width: 100%;
+        display: flex;
+
+    }
+    #clock{
+        color: #185997;
+        font-size: 25px;
+        margin: 7px;
+    }
+    .menus .box p{
+        margin: 4px;
+    }
+    .name{
+        display: flex;
+        justify-content: center;
+        font-size: 44px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+    .box{
+        border: 1px solid #b2b2b2;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        font-size: 18px;
+        transition: .3s ease;
+        display: block;
+        justify-items: center;
+        cursor: pointer;
+    }
+    .box:hover{
+        background-color: #185997;
+        color: white;
+        transform: translateY(-10px);
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
+    }
+    .box:hover #clock{
+        color: white;
+    }
+    .menus{
+        width: 100%;
+        display: flex;
+        padding: 20px;
+    }
+
+    .butt {
+    padding: 12px 18px;
+    background-color: #185997;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    
+    }
+    .bob{
+        padding-top: 30px;
+    }
+    .tertiary {
+        font-size: 24px;
+        font-weight: 400;
+    margin-bottom: 20px;
+    }
+    .primary {
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        margin-top: 100;
+    }
+    .para{
+        width: 70%;
+        padding-top: 100px;
+        padding-left: 20px;
+    }
+    .menupic .imagee img{
+        width: 80%;
+        margin-left: 100px;
+        padding-top: 20px;
+    }
+    .menupic{
+        display: flex;
+        width: 100%;
+        background-color: #fff5f2;
+        padding-top: 80px;
+        z-index: -1;
+
+    }
+    .navi{
+        width: 100%;
+        height: 80px;
+        background-color: #fff5f2;
+        display: flex;
+        justify-content:space-between;
+        box-shadow: 0 1px 1px -1px rgba(0,0,0,22);
+        position: fixed;
+        z-index: 22;
+    }
+    .navi .logo a{
+        font-size: 35px;
+        line-height: 80px;
+        padding: 0 30px;
+        font-weight: 600;
+        text-decoration: none;
+        color: black;
+    }
+    .navbar{
+        float: right;
+        margin-right: 10px;
+        line-height: 15px;
+    }
+    .navbar li{
+        margin: 10px;
+        padding-left: 9px;
+    }
+    .navi .navbar li a{
+        font-size: 18px;
+        font-weight: 540;
+        transition: .2s;
+    }
+    .navi .navbar li a:hover{
+        border-bottom: 2px solid;
+        border-color:#185997;
+    }
+    *{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .navlink{
+        margin-bottom: 2px;
+    }
