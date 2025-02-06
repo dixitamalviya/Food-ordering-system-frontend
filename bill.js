@@ -27,11 +27,16 @@ window.onload = function() {
         const itemName = sanitizeInput(document.getElementById('itemName').value);
         const itemQuantity = parseInt(sanitizeInput(document.getElementById('itemQuantity').value));
         const itemRate = parseFloat(sanitizeInput(document.getElementById('itemRate').value));
-        addItemToBill({ name: itemName, quantity: itemQuantity, rate: itemRate });
-        sessionStorage.setItem('item', itemName);
-        sessionStorage.setItem('quantity', itemQuantity);
-        sessionStorage.setItem('rate', itemRate);
-        document.getElementById('addItemForm').reset();
+    
+        if (itemName && !isNaN(itemQuantity) && !isNaN(itemRate)) {
+            addItemToBill({ name: itemName, quantity: itemQuantity, rate: itemRate });
+            sessionStorage.setItem('item', itemName);
+            sessionStorage.setItem('quantity', itemQuantity);
+            sessionStorage.setItem('rate', itemRate);
+            document.getElementById('addItemForm').reset();
+        } else {
+            alert('Please enter valid item details.');
+        }
     });
 
     // Session timeout logic
@@ -44,8 +49,30 @@ window.onload = function() {
 function sanitizeInput(input) {
     const element = document.createElement('div');
     element.innerText = input;
-    return element.innerHTML;
+    return element.textContent || element.innerText;
 }
+window.onload = function() {
+    displayBill();
+    const params = new URLSearchParams(window.location.search);
+    const item = sanitizeInput(params.get('item'));
+    const quantity = parseInt(sanitizeInput(params.get('quantity')));
+    const rate = parseFloat(sanitizeInput(params.get('rate')));
+
+    // Predefined list of allowed items
+    const allowedItems = ['item1', 'item2', 'item3']; // Replace with actual item names
+
+    if (item && !isNaN(quantity) && !isNaN(rate) && allowedItems.includes(item)) {
+        let bill = JSON.parse(sessionStorage.getItem('bill')) || [];
+        let existingItem = bill.find(billItem => billItem.name === item);
+
+        if (!existingItem) {
+            addItemToBill({ name: item, quantity: quantity, rate: rate });
+            sessionStorage.setItem('item', item);
+            sessionStorage.setItem('quantity', quantity);
+            sessionStorage.setItem('rate', rate);
+        }
+    }
+};
 
 function displayBill() {
     let bill = JSON.parse(sessionStorage.getItem('bill')) || [];
@@ -76,6 +103,16 @@ function addItemToBill(item) {
     bill.push(item);
     sessionStorage.setItem('bill', JSON.stringify(bill));
     displayBill();
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "bill.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+        }
+    };
+    xhr.send("item=" + encodeURIComponent(item.name) + "&quantity=" + item.quantity + "&rate=" + item.rate);
 }
 
 function removeRow(element) {

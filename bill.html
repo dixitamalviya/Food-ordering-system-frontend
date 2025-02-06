@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +18,13 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            max-width: auto;
+            height: auto;
+            margin: auto;
         }
         form {
-            max-width: 400px;
+            
+            max-width: auto;
             height: auto;
             margin: auto;
             padding: 20px;
@@ -30,14 +36,14 @@
             margin-bottom: 8px;
         }
         input, select {
-            width: 100%;
+            width: 97%;
             padding: 8px;
             margin-bottom: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
         button {
-            width: 100%;
+            width: 97%;
             padding: 10px;
             background-color: #185997;
             color: white;
@@ -48,7 +54,67 @@
         button:hover {
             background-color: #185997;
         }
+        .error {
+            color: red;
+            margin-bottom: 16px;
+        }
     </style>
+    <!-- <script>
+        document.getElementById('checkoutButton').addEventListener('click', function () {
+     const formData = {
+         fullName: document.getElementById('fullName').value,
+         course: document.getElementById('course').value,
+         semester: document.getElementById('semester').value,
+         enrollmentNumber: document.getElementById('enrollmentNumber').value,
+         email: document.getElementById('email').value,
+         phone: document.getElementById('phone').value,
+         items: getItems(), // Function to get order items, quantity, and price
+         totalPrice: document.getElementById('totalPrice').innerText // Total price shown in the page
+     };
+ 
+     // // Check if all required fields are filled
+     // if (!formData.fullName || !formData.course || !formData.semester || !formData.enrollmentNumber || !formData.email || !formData.phone || !formData.items.length) {
+     //     alert('Please fill out all required fields and add items to the order.');
+     //     return;
+     // }
+ 
+     fetch('bill.php', {  // Make sure this points to your actual PHP file location
+         method: 'POST',
+         headers: {
+             'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(formData)
+     })
+     .then(response => response.json())
+     .then(data => {
+         if (data.success) {
+             alert('Checkout successful! Your data has been saved.');
+         } else {
+             alert('Error: ' + data.error);
+         }
+     })
+     .catch((error) => {
+         console.error('Error:', error);
+         alert('There was an error during the checkout process.');
+     });
+ });
+ 
+ // Function to collect items from the order table
+ function getItems() {
+     const items = [];
+     document.querySelectorAll('#items tr').forEach(row => {
+         const item = {
+             name: row.querySelector('td:nth-child(1)').textContent,
+             rate: row.querySelector('td:nth-child(2)').textContent,
+             quantity: row.querySelector('td:nth-child(3)').textContent,
+             price: row.querySelector('td:nth-child(4)').textContent
+         };
+         items.push(item);
+     });
+     return items;
+ }
+ 
+     </script> -->
 </head>
 <body>
     <article>
@@ -63,155 +129,22 @@
         </table>
     </article>
     <header>
-        <h1>Information</h1>
+        <h1>Information and Order</h1>
         <address contenteditable>
             <h3>GLS University</h3>
         </address>
     </header>
-    <form>
+    <form id="feedbackForm" action="bill.php" method="POST">
+        <div id="errorMessages" class="error"></div>
         <label for="fullName">Full Name:</label>
         <input type="text" id="fullName" name="fullName" required>
-        <label for="course">Course:</label>
-        <select id="course" name="course" required>
-            <option value="">Select your course</option>
-            <option value="BSc">BSc</option>
-            <option value="BCom">BCom</option>
-            <option value="BA">BA</option>
-            <option value="BTech">BTech</option>
-            <option value="MSc">MSc</option>
-            <option value="MCom">MCom</option>
-            <option value="MA">MA</option>
-            <option value="MTech">MTech</option>
-        </select>
-        <label for="semester">Semester:</label>
-        <select id="semester" name="semester" required>
-            <option value="">Select your Semester</option>
-            <option value="Sem-1">Sem-1</option>
-            <option value="Sem-2">Sem-2</option>
-            <option value="Sem-3">Sem-3</option>
-            <option value="Sem-4">Sem-4</option>
-            <option value="Sem-5">Sem-5</option>
-            <option value="Sem-6">Sem-6</option>
-            <option value="Sem-7">Sem-7</option>
-            <option value="Sem-8">Sem-8</option>
-        </select>
+
         <label for="enrollmentNumber">Enrollment Number:</label>
         <input type="text" id="enrollmentNumber" name="enrollmentNumber" pattern="\d{15}" title="Enrollment number should be 15 digits" required>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@gmail\.com$" title="Email should end with @gmail.com" required>
+        
         <label for="phone">Phone Number:</label>
         <input type="tel" id="phone" name="phone" pattern="\d{10}" title="Phone number should be 10 digits" required>
-    </form>
-    <script>
-        document.getElementById('fullName').addEventListener('input', function () {
-            localStorage.setItem('fullName', this.value);
-        });
-        document.getElementById('course').addEventListener('change', function () {
-            localStorage.setItem('course', this.value);
-        });
-        document.getElementById('semester').addEventListener('change', function () {
-            localStorage.setItem('semester', this.value);
-        });
-        document.getElementById('enrollmentNumber').addEventListener('input', function () {
-            localStorage.setItem('enrollmentNumber', this.value);
-        });
-        document.getElementById('email').addEventListener('input', function () {
-            localStorage.setItem('email', this.value);
-        });
-        document.getElementById('phone').addEventListener('input', function () {
-            localStorage.setItem('phone', this.value);
-        });
-        window.onload = function () {
-            if (localStorage.getItem('fullName')) {
-                document.getElementById('fullName').value = localStorage.getItem('fullName');
-            }
-            if (localStorage.getItem('course')) {
-                document.getElementById('course').value = localStorage.getItem('course');
-            }
-            if (localStorage.getItem('semester')) {
-                document.getElementById('semester').value = localStorage.getItem('semester');
-            }
-            if (localStorage.getItem('enrollmentNumber')) {
-                document.getElementById('enrollmentNumber').value = localStorage.getItem('enrollmentNumber');
-            }
-            if (localStorage.getItem('email')) {
-                document.getElementById('email').value = localStorage.getItem('email');
-            }
-            if (localStorage.getItem('phone')) {
-                document.getElementById('phone').value = localStorage.getItem('phone');
-            }
-        };
-        document.querySelector('form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                course: document.getElementById('course').value,
-                semester: document.getElementById('semester').value,
-                enrollmentNumber: document.getElementById('enrollmentNumber').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                items: getItems() // Function to get order items, quantity, and price
-            };
-            fetch('https://your-backend-server.com/api/saveData', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data); // Optionally, redirect to the admin panel or show a success message
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        });
-        function getItems() {
-            const items = [];
-            document.querySelectorAll('#items tr').forEach(row => {
-                const item = {
-                    name: row.querySelector('td:nth-child(1)').textContent,
-                    rate: row.querySelector('td:nth-child(2)').textContent,
-                    quantity: row.querySelector('td:nth-child(3)').textContent,
-                    price: row.querySelector('td:nth-child(4)').textContent
-                };
-                items.push(item);
-            });
-            return items;
-        }
-        document.getElementById('checkoutButton').addEventListener('click', function () {
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                course: document.getElementById('course').value,
-                semester: document.getElementById('semester').value,
-                enrollmentNumber: document.getElementById('enrollmentNumber').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                items: getItems(), // Function to get order items, quantity, and price
-                totalPrice: document.getElementById('totalPrice').innerText
-            };
-            fetch('https://localhost:3000', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data); // Optionally, redirect to the admin panel or show a success message
-                alert('Checkout successful! Data sent to admin panel.');
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        });
-    </script>
-
-    <header>
-        <h1>Order and Bill</h1>
-    </header>
+    
     <article>
         <h1>Recipient</h1>
         <table class="inventory">
@@ -234,8 +167,9 @@
                 <td><span data-prefix="₹"></span><span id="totalPrice">0.00</span></td>
             </tr>
         </table>
-        <button type="button" id="checkoutButton">Checkout</button>
+        <button type="submit" id="checkoutButton">Checkout</button>
     </article>
+</form>
 </body>
 
 </html>

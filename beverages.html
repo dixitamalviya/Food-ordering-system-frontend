@@ -1,0 +1,667 @@
+<!--
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "your_database_name";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM menu_items";
+$result = $conn->query($sql);
+?>
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivam Canteen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+        
+    </script>
+    <link rel="stylesheet" href=\xampp\htdocs\SmartCampus\style.css>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+<body>
+    <script src="bill.js"></script>
+    <div class="navi">
+        <div class="logo">
+            <a href="">Menu</a>
+        </div>
+        <div class="navbar">
+            <nav class="navbar navbar-expand-lg" id="naviig">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href=\xampp\htdocs\SmartCampus\index.html>Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=\xampp\htdocs\SmartCampus\bill.html>Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+        <div class="menupic">
+            <div class="opening-hours" style="text-align: center;">
+                <img style="width: 100%;" src="C:\xampp\htdocs\SmartCampus\img\background.png">
+                <h3>Opening Hours</h3>
+                <p>Monday - Friday: 10:00 AM - 7:00 PM</p>
+                <p>Saturday: 10:00 AM - 5:00 PM</p>
+                <p><b>Sunday: Closed</b></p>
+            </div>
+        </div>
+
+    <div class="items" id="snacks">
+        <ul>
+            <li><a href="\xampp\htdocs\SmartCampus\menu.html" onclick="filterProducts('all')">All</a></li>
+            <li><a href="\xampp\htdocs\SmartCampus\snacks.html" onclick="filterProducts('snacks')">Snacks</a></li>
+            <li><a href="\xampp\htdocs\SmartCampus\packets.html" onclick="filterProducts('packets')">Packets</a></li>
+            <li><a href="\xampp\htdocs\SmartCampus\beverages.html" onclick="filterProducts('beverages')">Beverages</a></li>
+            <li><a href="\xampp\htdocs\SmartCampus\chocolates.html" onclick="filterProducts('chocolates')">Chocolates</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <!--    <?php if
+        ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo '<div class="itemss">';
+                echo '<div class="imgeeee"><img src="' . $row["image_url"] . '" alt="' . $row["name"] . '" width="100%"></div>';
+                echo '<div class="title" style="margin-top: 10px;"><span>' . $row["name"] . '</span></div>';
+                echo '<div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">';
+                echo '<span>₹' . $row["price"] . '</span>';
+                echo '<button class="bo" style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;" onclick="showQuantityButtons(this)">Order Now</button>';
+                echo '</div>';
+                echo '<div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">';
+                echo '<button onclick="decreaseQuantity(this)" style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>'; 
+                echo '<span style="margin: 0 10px;">0</span>'; 
+                echo '<button onclick="increaseQuantity(this)" style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>'; 
+                echo '<button class="final-order" style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;" onclick="placeOrder(this,\'' . $row["name"] . '\',' . $row["price"] . ')">Order</button>'; 
+                echo '</div>'; 
+                echo '</div>'; } } 
+                else { 
+                    echo "No items found"; 
+                }
+                ?>
+                -->
+      
+        <!-- beverages -->
+
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\full_tea.jpg"
+                    alt="full_tea" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Tea Full</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹40.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Tea Full',40.00)">Order</button>
+            </div>
+        </div>
+
+
+
+        <div class="itemss">
+            <div class="imgeeee">
+                <img src="\xampp\htdocs\SmartCampus\img\half_tea.jpg"
+                    alt="half_tea" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Tea Half</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹20.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Tea Half',20.00)">Order</button>
+            </div>
+        </div>
+
+
+
+        <div class="itemss">
+            <div class="imgeeee">
+                <img src="\xampp\htdocs\SmartCampus\img\full_coffee.jpg"
+                    alt="full_coffee" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Coffee Full</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹50.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Coffee Full',50.00)">Order</button>
+            </div>
+        </div>
+
+
+
+        <div class="itemss">
+            <div class="imgeeee">
+                <img src="\xampp\htdocs\SmartCampus\img\half_coffee.jpg"
+                    alt="half_coffee" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Coffee Half</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹30.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Coffee Half',30.00)">Order</button>
+            </div>
+        </div>
+
+        <div class="itemss">
+            <div class="imgeeee">
+                <img src="\xampp\htdocs\SmartCampus\img\chocolate_milkshake.jpg"
+                    alt="chocolate_milkshake" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Cavin's Milkshake Chocolate</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Cavin\'s Milkshake Chocolate',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\vanilla_milkshake.jpg"
+                    alt="vanilla_milkshake" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Cavin's Milkshake Vanillay</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Cavin\'s Milkshake Vanillay',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\strawberry_milkshake.jpg"
+                    alt="strawberry_milkshake" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Cavin's Milkshake Strawberry</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Cavin\'s Milkshake Strawberry',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\elaichi_kool.jpg"
+                    alt="elaichi_kool" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Amul Kool Elaichi</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Amul Kool Elaichi',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\badam_kool.jpg"
+                    alt="badam_kool" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Amul Kool Badam</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Amul Kool Badam',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\rose_kool.jpg"
+                    alt="rose_kool" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Amul Kool Rose</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Amul Kool Rose',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\limca.jpg"
+                    alt="limca" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Limca</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Limca',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\cocacola.jpg"
+                    alt="colacola" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Coca Cola</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Coca Cola',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\thumsup.jpg"
+                    alt="thumsup" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Thumbs Up</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Thumbs Up',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\sting.jpg"
+                    alt="sting" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Sting</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Sting',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\monster.jpg"
+                    alt="monster" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Monster Energy</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Monster Energy',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\coconut_water.jpg"
+                    alt="coconut_water" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Storia Coconut water</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Storia Coconut water',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\buttermilk.jpg"
+                    alt="buttermilk" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Amul Masti Spiced Buttermilk</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Amul Masti Spiced Buttermilk',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\lychee_mogumogu.jpg"
+                    alt="lychee_mogumogu" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Mogu Mogu Lychee</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Mogu Mogu lichi',60.00)">Order</button>
+            </div>
+        </div>
+        <div class="itemss">
+            <div class="imgeeee">
+                <img id="beverages"
+                    src="\xampp\htdocs\SmartCampus\img\lassi.jpg"
+                    alt="Lassi" width="100%">
+            </div>
+            <div class="title" style="margin-top: 10px;">
+                <span>Amul Lassi</span>
+            </div>
+            <div class="price" style="display: flex; justify-content: space-between; margin-top: 20px;">
+                <span>₹60.00</span>
+                <button class="bo"
+                    style="color: #185997; background-color: white; border: 1px solid; border-color: #185997; border-radius: 5px;"
+                    onclick="showQuantityButtons(this)">Order Now</button>
+            </div>
+            <div class="quantity-buttons" style="display: none; margin-top: 10px; align-items: center;">
+                <button onclick="decreaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">-</button>
+                <span style="margin: 0 10px;">0</span>
+                <button onclick="increaseQuantity(this)"
+                    style="border: none; background-color: #185997; color: white; padding: 5px; border-radius: 5px;">+</button>
+                <button class="final-order"
+                    style="margin-left: 10px; border: none; background-color: #185997; color: white; padding: 5px 10px; border-radius: 5px;"
+                    onclick="placeOrder(this,'Amul Lassi',60.00)">Order</button>
+            </div>
+        </div>
+        <script>
+            function showQuantityButtons(button) {
+                const parent = button.parentElement.parentElement;
+                const quantityDiv = parent.querySelector('.quantity-buttons');
+                button.style.display = 'none'; // Hide "Order Now" button
+                quantityDiv.style.display = 'flex'; // Show quantity buttons
+            }
+            
+    
+            function increaseQuantity(button) {
+                const quantityDiv = button.parentElement;
+                const quantitySpan = quantityDiv.querySelector('span');
+                let currentQuantity = parseInt(quantitySpan.textContent);
+                quantitySpan.textContent = currentQuantity + 1;
+            }
+    
+            function decreaseQuantity(button) {
+                const quantityDiv = button.parentElement;
+                const quantitySpan = quantityDiv.querySelector('span');
+                let currentQuantity = parseInt(quantitySpan.textContent);
+                if (currentQuantity > 0) {
+                    quantitySpan.textContent = currentQuantity - 1;
+                }
+            }
+    
+            function placeOrder(element, itemName, rate) {
+                const parent = event.target.parentElement;
+                const quantitySpan = parent.querySelector('span');
+                const quantity = parseInt(quantitySpan.textContent);
+    
+                if (quantity > 0) {
+                    alert(`You have ordered ${quantity} ${itemName}(s)!`);
+                    window.location.href = `bill.html?item=${encodeURIComponent(itemName)}&quantity=${quantity}&rate=${rate}`;
+                }
+                else {
+                    alert("Please select at least one item before placing an order.");
+                }
+            }
+        </script>
+
+    <div style="text-align: center; margin: auto;">
+        <h2>Do visit our website frequently</h2>
+        <p>Thank you for your co-operation</p>
+    </div>  
+
+</body>
+
+</html>
